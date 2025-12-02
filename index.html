@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI社群助手 | 房仲業專屬 AI 內容工作流優化中心</title>
+    <!-- 載入 Tailwind CSS CDN for modern RWD styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-teal': '#009688', // 專業青綠 (新主色)
+                        'accent-amber': '#ffc107', // 價值琥珀金 (新行動色)
+                        'bg-light': '#f8faff', // 清爽的淺背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '微軟正黑體', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 確保滾動順暢 */
+        html { scroll-behavior: smooth; }
+        /* 讓內容與頂部導航欄之間有間隙 */
+        .pt-safe { padding-top: 5rem; }
+        /* 影片容器 RWD 調整 */
+        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */ height: 0; overflow: hidden; max-width: 800px; margin: 0 auto; }
+        .video-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    </style>
+</head>
+<body class="font-sans bg-bg-light">
+
+    <!-- 頂端導航列 (Navigation Bar) - 包含錨點與服務名稱 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <!-- 服務名稱 -->
+            <a href="#hero" class="text-2xl font-extrabold text-primary-teal">AI社群助手</a>
+            
+            <!-- 錨點導航 (桌面版) -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#value" class="text-gray-600 hover:text-primary-teal transition duration-300">服務價值</a>
+                <a href="#workflow" class="text-gray-600 hover:text-primary-teal transition duration-300">操作流程</a>
+                <a href="#examples" class="text-gray-600 hover:text-primary-teal transition duration-300">成果範例</a>
+                <a href="#pricing" class="text-gray-600 hover:text-primary-teal transition duration-300">方案價格</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-primary-teal transition duration-300">客戶見證</a>
+            </div>
+            
+            <!-- CTA 按鈕 (桌面版) -->
+            <a href="#pricing" class="hidden md:block px-4 py-2 bg-accent-amber text-gray-800 text-sm font-semibold rounded-full hover:bg-amber-500 transition duration-300 shadow">立即試用</a>
+
+            <!-- 手機版選單按鈕 (隱藏功能，保持簡潔) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-primary-teal">
+                <!-- Icon for mobile menu -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        
+        <!-- 手機版菜單內容 (預設隱藏) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#value" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-teal">服務價值</a>
+                <a href="#workflow" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-teal">操作流程</a>
+                <a href="#examples" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-teal">成果範例</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-teal">方案價格</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-teal">客戶見證</a>
+                <!-- CTA on mobile -->
+                <a href="#pricing" class="block mt-2 mx-3 px-3 py-2 bg-accent-amber text-center text-gray-900 font-semibold rounded-md hover:bg-amber-500 transition duration-300 shadow">立即試用</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. 強烈訴求 (Hero Section) -->
+    <section id="hero" class="pt-safe bg-white py-20 md:py-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <!-- 左側文案 -->
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <span class="inline-block bg-accent-amber text-gray-800 text-xs font-bold px-3 py-1 rounded-full mb-4 shadow">房仲業專屬，內容行銷革命</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                    <span class="text-primary-teal">最省力的社群經營工具</span>，讓你專心放大業務成交機會！
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    全台最簡單的AI社群工具，只要會用LINE，就能產出有成交魅力的風格貼文跟短影音，一鍵發佈到所有社群平台，輕鬆搞定。
+                </p>
+                <a href="#pricing" class="cta-button w-full md:w-auto inline-block text-center px-10 py-4 text-xl bg-accent-amber text-gray-900 rounded-full font-bold shadow-lg hover:bg-amber-500 transition duration-300 transform hover:scale-105">
+                    立即試用 3 天，免費體驗！
+                </a>
+            </div>
+            <!-- 右側示意圖 -->
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://placehold.co/450x300/e6f7ff/009688?text=LINE+AI+Bot+Mockup" alt="AI 社群助手 LINE 介面示意圖" class="rounded-xl shadow-2xl transform hover:rotate-1 transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 服務價值 (Features) - 房仲專業化 -->
+    <section id="value" class="section py-20 bg-bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">🎯 房仲專屬！AI社群助手解決您的三大痛點</h2>
+            <p class="text-xl text-gray-500 mb-12 text-center">我們不只是 AI 寫手，更是您的專業房仲內容顧問。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 特點 1: 專業度 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-teal">
+                    <div class="text-3xl text-primary-teal mb-4">🏠</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">高信任度專業文案</h3>
+                    <p class="text-gray-600">AI 深度學習房仲專業術語，產出細膩物件描述與市場分析，建立您的專家形象。</p>
+                </div>
+                <!-- 特點 2: 效率 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-teal">
+                    <div class="text-3xl text-primary-teal mb-4">⏱️</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">極致的發佈效率</h3>
+                    <p class="text-gray-600">單一指令，自動將內容分發並排程至 FB、IG、YT Shorts 等多個平台，搶佔時效。</p>
+                </div>
+                <!-- 特點 3: 安全性 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-teal">
+                    <div class="text-3xl text-primary-teal mb-4">🛡️</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">內建法規提醒機制</h3>
+                    <p class="text-gray-600">自動過濾可能涉及誇大或不實的描述，助您遵守不動產經紀業相關法規，安心發佈。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 新增區塊 A: 最輕鬆操作的 AI 助手 (LINE USP) -->
+    <section id="workflow" class="section py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">📲 零學習成本！AI 內容工作流 操作影片</h2>
+            
+            <!-- 操作影片 Placeholder -->
+            <div class="video-container rounded-xl shadow-2xl mb-12">
+                <!-- 替換顏色，使用 primary-teal -->
+                <img src="https://placehold.co/800x450/009688/ffffff?text=AI%E7%A4%BE%E7%BE%A4%E5%8A%A9%E6%89%8B+%E6%93%8D%E4%BD%9C%E5%BD%B1%E7%89%87%E7%A4%BA%E6%84%8F" alt="AI 社群助手操作影片示意" class="rounded-xl">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
+                <!-- 步驟 1 -->
+                <div class="flex flex-col items-center p-4">
+                    <div class="bg-primary-teal text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">1</div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">LINE 上傳素材</h4>
+                    <p class="text-gray-500">在 LINE 聊天室中，上傳物件照片、輸入地址與關鍵字（例如：急售、學區房）。</p>
+                </div>
+                <!-- 箭頭示意 (桌面版) -->
+                <div class="hidden md:block text-accent-amber text-4xl text-center">→</div>
+                <!-- 步驟 2 -->
+                <div class="flex flex-col items-center p-4">
+                    <div class="bg-primary-teal text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">2</div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">AI 生成與確認</h4>
+                    <p class="text-gray-500">AI 立即產出 FB/IG/YT 等多種格式文案，在 LINE 上確認或微調。</p>
+                </div>
+                <!-- 箭頭示意 (桌面版) -->
+                <div class="hidden md:block text-accent-amber text-4xl text-center">→</div>
+                <!-- 步驟 3 -->
+                <div class="flex flex-col items-center p-4">
+                    <div class="bg-primary-teal text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">3</div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">排程與自動發佈</h4>
+                    <p class="text-gray-500">一鍵排程發佈時間，AI 系統自動分發到您的所有社群帳號，解放您的時間。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 4. 新增區塊 B: 成果範例 (Demo) -->
+    <section id="examples" class="section py-20 bg-bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">📈 成果範例：多平台內容，一次搞定</h2>
+            <p class="text-xl text-gray-500 mb-12 text-center">同一組照片，AI社群助手如何為您創造爆款內容格式？</p>
+
+            <!-- 內容輪播示意圖 (調整為 3 欄) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- FB 長貼文範例 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <img src="https://placehold.co/300x200/4267B2/ffffff?text=FB+專業長文" alt="FB 專業長文示意" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="font-bold text-lg mb-2 text-primary-teal">FB 深度物件介紹 (圖文)</h4>
+                    <p class="text-sm text-gray-500">強調格局、周邊生活機能、潛在增值空間，適合深度用戶轉化。</p>
+                </div>
+                <!-- IG 圖文範例 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <img src="https://placehold.co/300x200/C13584/ffffff?text=IG+美圖與短文" alt="IG 美圖與短文示意" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="font-bold text-lg mb-2 text-primary-teal">IG 視覺化美圖與標籤 (圖文)</h4>
+                    <p class="text-sm text-gray-500">重點資訊濃縮，搭配高質量圖集，快速吸引年輕潛在買家關注。</p>
+                </div>
+                <!-- YT Shorts 腳本範例 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <img src="https://placehold.co/300x200/FF0000/ffffff?text=YT+Shorts+腳本" alt="YT Shorts 腳本示意" class="rounded-lg mb-4 w-full h-auto">
+                    <h4 class="font-bold text-lg mb-2 text-primary-teal">YT Shorts/Reels 帶看腳本 (短影音)</h4>
+                    <p class="text-sm text-gray-500">自動產出 30 秒高轉場、具備爆點的口播腳本，提高帶看率。</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 5. 方案價格 (Pricing) - 四方案設計 -->
+    <section id="pricing" class="section py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">💳 選擇最能助您成交的「AI社群助手」方案</h2>
+            <p class="text-xl text-gray-500 mb-12 text-center">所有方案均為單一帳號，無限次數內容生成，僅以**自動發佈次數**計價。</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 方案 1: 純圖文 (月繳) -->
+                <div class="plan bg-bg-light p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-primary-teal">圖文基本版 (月繳)</h3>
+                    <p class="text-4xl font-extrabold text-gray-900 mb-2">$999 <span class="text-base font-normal text-gray-500">/月</span></p>
+                    <p class="text-sm text-gray-500 mb-6">每月 50 次自動發佈</p>
+                    <a href="#" class="cta-button w-full text-center px-4 py-3 text-lg bg-primary-teal text-white rounded-full font-bold hover:bg-teal-600 transition duration-300">立即啟動</a>
+                    <ul class="mt-6 space-y-3 text-left text-gray-700">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> FB/IG/Blog 貼文生成</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 圖文排程自動發佈</li>
+                        <li class="flex items-center text-gray-400"><span class="text-gray-400 mr-2">✕</span> 短影音腳本生成</li>
+                    </ul>
+                </div>
+
+                <!-- 方案 2: 純圖文 (年繳) -->
+                <div class="plan bg-bg-light p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl border-2 border-primary-teal">
+                    <span class="inline-block bg-primary-teal text-white text-xs font-bold px-3 py-1 rounded-full mb-3">年省 2000 元</span>
+                    <h3 class="text-xl font-bold mb-3 text-primary-teal">圖文基本版 (年繳)</h3>
+                    <p class="text-4xl font-extrabold text-gray-900 mb-2">$9,990 <span class="text-base font-normal text-gray-500">/年</span></p>
+                    <p class="text-sm text-gray-500 mb-6">每月 50 次自動發佈</p>
+                    <a href="#" class="cta-button w-full text-center px-4 py-3 text-lg bg-primary-teal text-white rounded-full font-bold hover:bg-teal-600 transition duration-300">立即啟動</a>
+                    <ul class="mt-6 space-y-3 text-left text-gray-700">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> FB/IG/Blog 貼文生成</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 圖文排程自動發佈</li>
+                        <li class="flex items-center text-gray-400"><span class="text-gray-400 mr-2">✕</span> 短影音腳本生成</li>
+                    </ul>
+                </div>
+                
+                <!-- 方案 3: 圖文+短影音 (月繳) -->
+                <div class="plan bg-white p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl">
+                    <h3 class="text-xl font-bold mb-3 text-accent-amber">圖文+影音版 (月繳)</h3>
+                    <p class="text-4xl font-extrabold text-gray-900 mb-2">$1,999 <span class="text-base font-normal text-gray-500">/月</span></p>
+                    <p class="text-sm text-gray-500 mb-6">每月 100 次自動發佈</p>
+                    <a href="#" class="cta-button w-full text-center px-4 py-3 text-lg bg-accent-amber text-gray-900 rounded-full font-bold hover:bg-amber-500 transition duration-300">立即訂閱</a>
+                    <ul class="mt-6 space-y-3 text-left text-gray-800 font-semibold">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> **包含所有圖文功能**</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> **YT & Reels 腳本生成與發佈**</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> AI 市場趨勢分析報告</li>
+                    </ul>
+                </div>
+
+                <!-- 方案 4: 圖文+短影音 (年繳) - 主推 -->
+                <div class="plan bg-white p-6 rounded-2xl shadow-2xl transition duration-300 transform scale-105 border-4 border-accent-amber">
+                    <span class="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">最受歡迎！年省 4000 元</span>
+                    <h3 class="text-xl font-bold mb-3 text-accent-amber">圖文+影音版 (年繳)</h3>
+                    <p class="text-5xl font-extrabold text-gray-900 mb-2">$19,990 <span class="text-lg font-normal text-gray-500">/年</span></p>
+                    <p class="text-sm text-gray-500 mb-6">每月 100 次自動發佈</p>
+                    <a href="#" class="cta-button w-full text-center px-4 py-4 text-xl bg-accent-amber text-gray-900 rounded-full font-bold hover:bg-amber-500 transition duration-300">立即訂閱王牌版</a>
+                    <ul class="mt-6 space-y-3 text-left text-gray-800 font-semibold">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> **包含所有圖文功能**</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> **YT & Reels 腳本生成與發佈**</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> AI 市場趨勢分析報告</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 客戶見證 (Testimonials) -->
+    <section id="testimonials" class="section py-20 bg-bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">🗣️ 來自房仲同業的真實回饋</h2>
+            <p class="text-xl text-gray-500 mb-12 text-center">高效率讓他們有更多時間服務客戶，而不是被文案困住。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 見證 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent-amber">
+                    <p class="text-lg italic text-gray-700 mb-4">「以前一個新物件上架，光是寫介紹文、調整各平台格式，就要花掉我 2 小時。現在我只要在 **LINE 上丟照片和地址**，文案 5 分鐘就出來，我多了更多時間去帶看！」</p>
+                    <p class="font-semibold text-gray-900">— 黃經理，資深房仲業務</p>
+                </div>
+                <!-- 見證 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent-amber">
+                    <p class="text-lg italic text-gray-700 mb-4">「最棒的是它能自動幫我產出**市場分析的內容**，讓我看起來更專業！我的客戶對我的信任度明顯提升了，詢問度也變高。我的個人 IP 建立變得毫不費力。」</p>
+                    <p class="font-semibold text-gray-900">— 陳小姐，百萬經紀人</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Footer -->
+    <footer class="bg-primary-teal py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold text-white mb-6">讓「AI社群助手」成為您的業績加速器！</h3>
+            <a href="#pricing" class="cta-button inline-block text-center px-10 py-4 text-xl bg-accent-amber text-gray-900 rounded-full font-bold hover:bg-amber-500 transition duration-300 transform hover:scale-105">
+                立即免費體驗，告別手動發文地獄！
+            </a>
+            <p class="text-sm text-teal-200 mt-8">© 2025 AI社群助手. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            // Select all interactive links and the CTA button within the mobile menu
+            const navLinks = menu.querySelectorAll('a'); 
+
+            function toggleMenu() {
+                // Toggle the 'hidden' class to show/hide the menu
+                menu.classList.toggle('hidden');
+            }
+
+            // 1. Add event listener to the hamburger button
+            if (button) {
+                button.addEventListener('click', toggleMenu);
+            }
+
+            // 2. Add event listener to hide the menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Hide the menu only if it is visible
+                    if (!menu.classList.contains('hidden')) {
+                         menu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
