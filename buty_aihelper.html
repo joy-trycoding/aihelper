@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI美業助手 | 美髮/美甲/美容師專屬內容加速器</title>
-    <!-- 載入 Tailwind CSS CDN for modern RWD styling --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 Tailwind CSS CDN for modern RWD styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -58,6 +59,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 0.5rem;
+            z-index: 10;
         }
         .carousel-dot {
             width: 10px;
@@ -74,11 +76,14 @@
 </head>
 <body class="font-sans bg-bg-light">
 
-    <!-- 頂端導航列 (Navigation Bar) - 包含錨點與服務名稱 --><nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
+    <!-- 頂端導航列 (Navigation Bar) - 包含錨點與服務名稱 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <!-- 服務名稱 --><a href="#hero" class="text-2xl font-extrabold text-primary-rose">AI美業助手</a>
+            <!-- 服務名稱 -->
+            <a href="#hero" class="text-2xl font-extrabold text-primary-rose">AI美業助手</a>
             
-            <!-- 錨點導航 (桌面版) --><div class="hidden md:flex space-x-8">
+            <!-- 錨點導航 (桌面版) -->
+            <div class="hidden md:flex space-x-8">
                 <a href="#value" class="text-gray-600 hover:text-primary-rose transition duration-300">服務價值</a>
                 <a href="#workflow" class="text-gray-600 hover:text-primary-rose transition duration-300">操作流程</a>
                 <a href="#examples" class="text-gray-600 hover:text-primary-rose transition duration-300">成果範例</a>
@@ -86,28 +91,35 @@
                 <a href="#testimonials" class="text-gray-600 hover:text-primary-rose transition duration-300">客戶見證</a>
             </div>
             
-            <!-- CTA 按鈕 (桌面版) --><a href="#pricing" class="hidden md:block px-4 py-2 bg-accent-gold text-gray-800 text-sm font-semibold rounded-full hover:bg-yellow-500 transition duration-300 shadow">立即試用</a>
+            <!-- CTA 按鈕 (桌面版) -->
+            <a href="#pricing" class="hidden md:block px-4 py-2 bg-accent-gold text-gray-800 text-sm font-semibold rounded-full hover:bg-yellow-500 transition duration-300 shadow">立即試用</a>
 
-            <!-- 手機版選單按鈕 (隱藏功能，保持簡潔) --><button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-primary-rose">
-                <!-- Icon for mobile menu --><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <!-- 手機版選單按鈕 (隱藏功能，保持簡潔) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-primary-rose">
+                <!-- Icon for mobile menu -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
         
-        <!-- 手機版菜單內容 (預設隱藏) --><div id="mobile-menu" class="hidden md:hidden">
+        <!-- 手機版菜單內容 (預設隱藏) -->
+        <div id="mobile-menu" class="hidden md:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#value" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-rose">服務價值</a>
                 <a href="#workflow" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-rose">操作流程</a>
                 <a href="#examples" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-rose">成果範例</a>
                 <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-rose">方案價格</a>
                 <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-rose">客戶見證</a>
-                <!-- CTA on mobile --><a href="#pricing" class="block mt-2 mx-3 px-3 py-2 bg-accent-gold text-center text-gray-900 font-semibold rounded-md hover:bg-yellow-500 transition duration-300 shadow">立即試用</a>
+                <!-- CTA on mobile -->
+                <a href="#pricing" class="block mt-2 mx-3 px-3 py-2 bg-accent-gold text-center text-gray-900 font-semibold rounded-md hover:bg-yellow-500 transition duration-300 shadow">立即試用</a>
             </div>
         </div>
     </nav>
 
-    <!-- 1. 強烈訴求 (Hero Section) --><section id="hero" class="pt-safe bg-white py-20 md:py-32">
+    <!-- 1. 強烈訴求 (Hero Section) -->
+    <section id="hero" class="pt-safe bg-white py-20 md:py-32">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-            <!-- 左側文案 --><div class="md:w-1/2 mb-10 md:mb-0">
+            <!-- 左側文案 -->
+            <div class="md:w-1/2 mb-10 md:mb-0">
                 <span class="inline-block bg-accent-gold text-gray-800 text-xs font-bold px-3 py-1 rounded-full mb-4 shadow">美業時尚內容加速器</span>
                 <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
                     <span class="text-primary-rose">一分鐘釋放美學力</span>，用 LINE 創造爆單作品文案！
@@ -119,13 +131,18 @@
                     立即免費試用 3 天，讓作品被看見！
                 </a>
             </div>
-            <!-- 右側輪播圖 --><div class="md:w-1/2 flex justify-center">
+            <!-- 右側輪播圖 -->
+            <div class="md:w-1/2 flex justify-center">
                 <div class="carousel-container">
                     <div class="carousel-slides" id="hero-carousel-slides">
-                        <!-- 圖片 1: 美髮IG 爆款貼文 --><img src="https://placehold.co/600x450/ffe4e6/EC4899?text=美髮師IG%20爆款貼文%0A(高質感照片%2B專業文案)" alt="美髮IG爆款貼文" class="rounded-xl">
-                        <!-- 圖片 2: 美容FB Before/After 廣告 --><img src="https://placehold.co/600x450/ffe4e6/EC4899?text=美容FB%20Before%2FAfter%20廣告%0A(促銷訊息%2B預約按鈕)" alt="美容FB廣告" class="rounded-xl">
-                        <!-- 圖片 3: LINE AI 助手介面 --><img src="https://placehold.co/600x450/ffe4e6/EC4899?text=LINE%20AI%20助手%20介面%0A(輸入作品%20%3E%20生成文案)" alt="LINE AI助手介面" class="rounded-xl">
-                        <!-- 圖片 4: 客戶/業績 成長數據 --><img src="https://placehold.co/600x450/ffe4e6/EC4899?text=客戶%2F業績%20成長數據%0A(趨勢圖%2B效益呈現)" alt="客戶業績成長數據" class="rounded-xl">
+                        <!-- 圖片 1: 美髮 IG 貼文 (相對路徑) -->
+                        <img src="assets/beauty_ig_hair.jpg" alt="美髮IG爆款貼文" class="rounded-xl">
+                        <!-- 圖片 2: 美容 FB 貼文 (相對路徑) -->
+                        <img src="assets/beauty_fb_nose.jpg" alt="美容FB貼文" class="rounded-xl">
+                        <!-- 圖片 3: LINE AI 助手介面 (相對路徑) -->
+                        <img src="assets/beauty_line_interface.jpg" alt="LINE AI助手介面" class="rounded-xl">
+                        <!-- 圖片 4: 客戶業績數據圖 (相對路徑) -->
+                        <img src="assets/beauty_growth_data.jpg" alt="客戶業績成長數據" class="rounded-xl">
                     </div>
                     <div class="carousel-dots" id="hero-carousel-dots">
                         <div class="carousel-dot active" data-slide="0"></div>
@@ -138,53 +155,64 @@
         </div>
     </section>
 
-    <!-- 2. 服務價值 (Features) - 美業專業化 --><section id="value" class="section py-20 bg-bg-light">
+    <!-- 2. 服務價值 (Features) - 美業專業化 -->
+    <section id="value" class="section py-20 bg-bg-light">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">🎯 美業專屬！AI美業助手解決您的三大痛點</h2>
             <p class="text-xl text-gray-500 mb-12 text-center">我們不只是 AI 寫手，更是您的風格傳達專家。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 特點 1: 風格一致性 --><div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-rose">
+                <!-- 特點 1: 風格一致性 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-rose">
                     <div class="text-3xl text-primary-rose mb-4">✨</div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">美學風格語境鎖定</h3>
-                    <!-- 內文修改 --><p class="text-gray-600">內建親切風、日韓系、文青風等文案風格，確保您的作品描述與美學定位完全一致。</p>
+                    <p class="text-gray-600">內建親切風、日韓系、文青風等文案風格，確保您的作品描述與美學定位完全一致。</p>
                 </div>
-                <!-- 特點 2: 預約轉化 --><div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-rose">
+                <!-- 特點 2: 預約轉化 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-rose">
                     <div class="text-3xl text-primary-rose mb-4">📅</div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">高轉化預約引導</h3>
-                    <!-- 內文修改 --><p class="text-gray-600">可預設帶有私訊、加LINE、電話等聯絡資訊，引導粉絲直接預約加速成交。</p>
+                    <p class="text-gray-600">可預設帶有私訊、加LINE、電話等聯絡資訊，引導粉絲直接預約加速成交。</p>
                 </div>
-                <!-- 特點 3: 短影音 --><div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-rose">
+                <!-- 特點 3: 短影音 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-rose">
                     <div class="text-3xl text-primary-rose mb-4">🎬</div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">零基礎短影音腳本</h3>
-                    <!-- 內文修改 --><p class="text-gray-600">自動產出 Before/After、作品介紹、流行趨勢解讀、節慶風的 Reels/TikTok 腳本，輕鬆創造流量。</p>
+                    <p class="text-gray-600">自動產出 Before/After、作品介紹、流行趨勢解讀、節慶風的 Reels/TikTok 腳本，輕鬆創造流量。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. 新增區塊 A: 最輕鬆操作的 AI 助手 (LINE USP) --><section id="workflow" class="section py-20 bg-white">
+    <!-- 3. 新增區塊 A: 最輕鬆操作的 AI 助手 (LINE USP) -->
+    <section id="workflow" class="section py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">📲 零學習成本！AI 內容工作流 操作影片</h2>
             
-            <!-- 操作影片 Placeholder - 圖像優化: 3-Step Workflow 示意 (美業版本) --><div class="video-container rounded-xl shadow-2xl mb-12">
+            <!-- 操作影片 Placeholder - 圖像優化: 3-Step Workflow 示意 (美業版本) -->
+            <div class="video-container rounded-xl shadow-2xl mb-12">
                 <img src="https://placehold.co/800x450/EC4899/ffffff?text=AI+Beauty+Content+Workflow%0A(Photo+%3E+Generate+%3E+Schedule)" alt="AI 美業助手操作影片示意" class="rounded-xl">
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
-                <!-- 步驟 1 --><div class="flex flex-col items-center p-4">
+                <!-- 步驟 1 -->
+                <div class="flex flex-col items-center p-4">
                     <div class="bg-primary-rose text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">1</div>
                     <h4 class="text-2xl font-semibold text-gray-800 mb-2">LINE 上傳作品與風格</h4>
                     <p class="text-gray-500">在 LINE 聊天室中，上傳作品照片、輸入客戶需求與服務價格。</p>
                 </div>
-                <!-- 箭頭示意 (桌面版) --><div class="hidden md:block text-accent-gold text-4xl text-center">→</div>
-                <!-- 步驟 2 --><div class="flex flex-col items-center p-4">
+                <!-- 箭頭示意 (桌面版) -->
+                <div class="hidden md:block text-accent-gold text-4xl text-center">→</div>
+                <!-- 步驟 2 -->
+                <div class="flex flex-col items-center p-4">
                     <div class="bg-primary-rose text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">2</div>
                     <h4 class="text-2xl font-semibold text-gray-800 mb-2">AI 生成與確認</h4>
                     <p class="text-gray-500">AI 立即產出 IG/FB/Reels 等多種格式文案，在 LINE 上確認或微調。</p>
                 </div>
-                <!-- 箭頭示意 (桌面版) --><div class="hidden md:block text-accent-gold text-4xl text-center">→</div>
-                <!-- 步驟 3 --><div class="flex flex-col items-center p-4">
+                <!-- 箭頭示意 (桌面版) -->
+                <div class="hidden md:block text-accent-gold text-4xl text-center">→</div>
+                <!-- 步驟 3 -->
+                <div class="flex flex-col items-center p-4">
                     <div class="bg-primary-rose text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold mb-4 shadow-md">3</div>
                     <h4 class="text-2xl font-semibold text-gray-800 mb-2">排程與自動發佈</h4>
                     <p class="text-gray-500">一鍵排程發佈時間，AI 系統自動分發到您的所有社群帳號，解放雙手專注服務客戶。</p>
@@ -193,23 +221,28 @@
         </div>
     </section>
     
-    <!-- 4. 新增區塊 B: 成果範例 (Demo) --><section id="examples" class="section py-20 bg-bg-light">
+    <!-- 4. 新增區塊 B: 成果範例 (Demo) -->
+    <section id="examples" class="section py-20 bg-bg-light">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">📈 成果範例：多平台內容，一次搞定</h2>
             <p class="text-xl text-gray-500 mb-12 text-center">同一組作品照片，AI美業助手如何為您創造爆款內容格式？</p>
 
-            <!-- 內容輪播示意圖 (調整為 3 欄) --><div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- FB 長貼文範例 - 圖像優化: 促銷活動 Mockup --><div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+            <!-- 內容輪播示意圖 (調整為 3 欄) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- FB 長貼文範例 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                     <img src="https://placehold.co/300x200/3b5998/ffffff?text=FB+Service+Promotion+Mockup" alt="FB 服務促銷長文示意" class="rounded-lg mb-4 w-full h-auto">
                     <h4 class="font-bold text-lg mb-2 text-primary-rose">FB 服務介紹與促銷長文 (圖文)</h4>
                     <p class="text-sm text-gray-500">強調服務價值、優惠價格與預約資訊，適合深度轉化和活動宣傳。</p>
                 </div>
-                <!-- IG 圖文範例 - 圖像優化: IG 作品圖文 Mockup --><div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                <!-- IG 圖文範例 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                     <img src="https://placehold.co/300x200/C13584/ffffff?text=IG+Nail+Art+Style+Post" alt="IG 美甲作品圖文示意" class="rounded-lg mb-4 w-full h-auto">
                     <h4 class="font-bold text-lg mb-2 text-primary-rose">IG 精選作品風格解析 (圖文)</h4>
                     <p class="text-sm text-gray-500">精準描述流行趨勢、顏色編號，搭配熱門標籤，吸引精準客群。</p>
                 </div>
-                <!-- YT Shorts 腳本範例 - 圖像優化: Before/After 短影音 Mockup --><div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                <!-- YT Shorts 腳本範例 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                     <img src="https://placehold.co/300x200/FF0000/ffffff?text=Reels+Before%2FAfter+Script" alt="Reels 短影音腳本示意" class="rounded-lg mb-4 w-full h-auto">
                     <h4 class="font-bold text-lg mb-2 text-primary-rose">Reels/TikTok 變美魔法腳本 (短影音)</h4>
                     <p class="text-sm text-gray-500">自動產出 15 秒高對比、快速變裝、或技術展示的腳本，衝高觀看數。</p>
@@ -219,13 +252,15 @@
         </div>
     </section>
 
-    <!-- 5. 方案價格 (Pricing) - 四方案設計 --><section id="pricing" class="section py-20 bg-white">
+    <!-- 5. 方案價格 (Pricing) - 四方案設計 -->
+    <section id="pricing" class="section py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">💳 選擇最能擴大您美業影響力的方案</h2>
             <p class="text-xl text-gray-500 mb-12 text-center">所有方案均為單一帳號，無限次數內容生成，僅以**作品曝光發佈次數**計價。</p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- 方案 1: 純圖文 (月繳) --><div class="plan bg-bg-light p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl">
+                <!-- 方案 1: 純圖文 (月繳) -->
+                <div class="plan bg-bg-light p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl">
                     <h3 class="text-xl font-bold mb-3 text-primary-rose">作品圖文版 (月繳)</h3>
                     <p class="text-4xl font-extrabold text-gray-900 mb-2">$899 <span class="text-base font-normal text-gray-500">/月</span></p>
                     <p class="text-sm text-gray-500 mb-6">每月 50 次自動發佈</p>
@@ -237,7 +272,8 @@
                     </ul>
                 </div>
 
-                <!-- 方案 2: 純圖文 (年繳) --><div class="plan bg-bg-light p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl border-2 border-primary-rose">
+                <!-- 方案 2: 純圖文 (年繳) -->
+                <div class="plan bg-bg-light p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl border-2 border-primary-rose">
                     <span class="inline-block bg-primary-rose text-white text-xs font-bold px-3 py-1 rounded-full mb-3">年省 1800 元</span>
                     <h3 class="text-xl font-bold mb-3 text-primary-rose">作品圖文版 (年繳)</h3>
                     <p class="text-4xl font-extrabold text-gray-900 mb-2">$8,990 <span class="text-base font-normal text-gray-500">/年</span></p>
@@ -250,7 +286,8 @@
                     </ul>
                 </div>
                 
-                <!-- 方案 3: 圖文+短影音 (月繳) --><div class="plan bg-white p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl">
+                <!-- 方案 3: 圖文+短影音 (月繳) -->
+                <div class="plan bg-white p-6 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl">
                     <h3 class="text-xl font-bold mb-3 text-accent-gold">圖文+影音版 (月繳)</h3>
                     <p class="text-4xl font-extrabold text-gray-900 mb-2">$1,799 <span class="text-base font-normal text-gray-500">/月</span></p>
                     <p class="text-sm text-gray-500 mb-6">每月 100 次自動發佈</p>
@@ -262,7 +299,8 @@
                     </ul>
                 </div>
 
-                <!-- 方案 4: 圖文+短影音 (年繳) - 主推 --><div class="plan bg-white p-6 rounded-2xl shadow-2xl transition duration-300 transform scale-105 border-4 border-accent-gold">
+                <!-- 方案 4: 圖文+短影音 (年繳) - 主推 -->
+                <div class="plan bg-white p-6 rounded-2xl shadow-2xl transition duration-300 transform scale-105 border-4 border-accent-gold">
                     <span class="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">最受歡迎！年省 3600 元</span>
                     <h3 class="text-xl font-bold mb-3 text-accent-gold">圖文+影音版 (年繳)</h3>
                     <p class="text-5xl font-extrabold text-gray-900 mb-2">$17,990 <span class="text-lg font-normal text-gray-500">/年</span></p>
@@ -278,17 +316,20 @@
         </div>
     </section>
 
-    <!-- 6. 客戶見證 (Testimonials) --><section id="testimonials" class="section py-20 bg-bg-light">
+    <!-- 6. 客戶見證 (Testimonials) -->
+    <section id="testimonials" class="section py-20 bg-bg-light">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-gray-900 mb-4 text-center">🗣️ 來自美業同業的真實回饋</h2>
             <p class="text-xl text-gray-500 mb-12 text-center">讓專業的美學創作者，擺脫文案困擾，專注於手藝。</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 見證 1: 美甲師 --><div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent-gold">
+                <!-- 見證 1: 美甲師 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent-gold">
                     <p class="text-lg italic text-gray-700 mb-4">「以前光是寫日系美甲、韓系光療的專業術語，就要花掉半小時。現在我只要在 **LINE 上傳照片和風格**，文案立刻帶有專業感，作品預約詢問度提升了 30%！」</p>
                     <p class="font-semibold text-gray-900">— Lily，個人美甲工作室主理人</p>
                 </div>
-                <!-- 見證 2: 美髮師 --><div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent-gold">
+                <!-- 見證 2: 美髮師 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent-gold">
                     <p class="text-lg italic text-gray-700 mb-4">「我的作品很棒，但一直不會拍短影音。AI 幫我生成了幾個超有梗的 **Before/After 轉場腳本**，讓我輕鬆追上潮流，Reels 流量真的爆了！」</p>
                     <p class="font-semibold text-gray-900">— Kevin 老師，連鎖美髮沙龍設計師</p>
                 </div>
@@ -296,4 +337,89 @@
         </div>
     </section>
     
-    <!-- Final CTA Footer --><footer class="bg-primary-rose py-12">
+    <!-- Final CTA Footer -->
+    <footer class="bg-primary-rose py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold text-white mb-6">讓「AI美業助手」成為您的美業預約加速器！</h3>
+            <a href="#pricing" class="cta-button inline-block text-center px-10 py-4 text-xl bg-accent-gold text-gray-900 rounded-full font-bold hover:bg-yellow-500 transition duration-300 transform hover:scale-105">
+                立即免費體驗，釋放您的美學創作力！
+            </a>
+            <p class="text-sm text-pink-200 mt-8">© 2025 AI美業助手. All rights reserved. 專為美業設計。</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Menu and Carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Mobile Menu Toggle Logic ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a'); 
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('hidden');
+            }
+
+            if (menuButton) {
+                menuButton.addEventListener('click', toggleMenu);
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // --- Hero Carousel Logic ---
+            const slidesContainer = document.getElementById('hero-carousel-slides');
+            const dotsContainer = document.getElementById('hero-carousel-dots');
+            const slides = slidesContainer ? slidesContainer.querySelectorAll('img') : [];
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+            const intervalTime = 4000; // 自動輪播間隔時間 (4秒)
+
+            if (totalSlides > 0) {
+                // 顯示特定圖片
+                function showSlide(index) {
+                    currentSlide = (index + totalSlides) % totalSlides;
+                    const offset = -currentSlide * 100;
+                    slidesContainer.style.transform = `translateX(${offset}%)`;
+                    updateDots();
+                }
+
+                // 更新圓點樣式
+                function updateDots() {
+                    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                    dots.forEach((dot, index) => {
+                        dot.classList.remove('active');
+                        if (index === currentSlide) {
+                            dot.classList.add('active');
+                        }
+                    });
+                }
+
+                // 自動播放
+                function autoPlay() {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+
+                // 點擊圓點切換
+                dotsContainer.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('carousel-dot')) {
+                        const slideIndex = parseInt(e.target.dataset.slide);
+                        showSlide(slideIndex);
+                    }
+                });
+
+                // 初始化並啟動自動播放
+                showSlide(0);
+                setInterval(autoPlay, intervalTime);
+            }
+        });
+    </script>
+
+</body>
+</html>
